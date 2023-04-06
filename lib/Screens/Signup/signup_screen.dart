@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:login_signup_page/Screens/Signup/components/sign_up_top_image.dart';
 import 'package:login_signup_page/Screens/Signup/components/signup_form.dart';
-import 'package:login_signup_page/Screens/Signup/components/social_sign_up.dart';
 import 'package:login_signup_page/components/background.dart';
+import 'package:login_signup_page/constants.dart';
 import 'package:login_signup_page/responsive.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -14,7 +14,25 @@ class SignUpScreen extends StatelessWidget {
       child: SingleChildScrollView(
         child: Responsive(
           mobile: const MobileSignupScreen(),
-          desktop: Row(),
+          desktop: Row(
+            children: [
+              const Expanded(
+                child: SignUpScreenTopImage(),
+              ),
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    SizedBox(
+                      width: 450,
+                      child: SignUpForm(),
+                    ),
+                    SizedBox(height: defaultPadding / 2),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

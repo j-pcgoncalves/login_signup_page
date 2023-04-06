@@ -42,7 +42,7 @@ class MobileSignupScreen extends StatelessWidget {
             Spacer(),
           ],
         ),
-        const SocialSignUp(),
+        // const SocialSignUp(),
       ],
     );
   }
